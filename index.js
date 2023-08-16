@@ -615,7 +615,8 @@ function decrease(){
     count-=1;
     document.getElementById("mylabel").innerHTML = count;
 }
-*/
+             //that or this//
+
 let count = 0;
 
 document.getElementById("increasebtn").onclick = function(){
@@ -626,3 +627,264 @@ document.getElementById("decreasebtn").onclick = function(){
     count -= 1;
     document.getElementById("mylabel").innerHTML = count;
 }  
+*/
+
+/*              Arrow Function Expressions 
+const greeting = (usernmae) => console.log (`Hello ${usernmae}`)
+greeting("Niloy");
+
+const percentage = (x,y) => x/y * 100;  
+console.log( `The percentage is: ${percentage(45,50)}%`);
+
+//another decending order
+let grades = [50,70,40,80,60,90];
+grades.sort((x,y) => y-x);
+grades.forEach((element) => console.log(element));
+*/
+
+/*              Shuffle an array 
+let cards = ["A", "2","3","4","5","6","7","8","9","10","J","Q","K"];
+
+shuffle(cards);
+//console.log (cards[0]);
+cards.forEach(card => console.log(card));
+
+function shuffle(array){
+    let currentIndex = array.length;
+
+    while(currentIndex != 0){
+        let randomIndex = Math.floor(Math.random() * array.length);
+        currentIndex -= 1;
+
+        let temp = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temp;
+    }
+    return array;
+}
+*/
+
+/*                Nested Function 
+let username = "Niloy";
+let userInbox = 0;
+
+login();
+
+function login(){
+    displayusername();
+    displayuserInbox();
+
+    function displayusername(){
+        console.log(`Welcome ${username}`);
+    }
+    function displayuserInbox(){
+        console.log(`You have ${userInbox} message`);
+    }
+}
+*/
+
+/*                   Map 
+const store = new Map([
+    ["t-shirt", 20],
+    ["jeans", 30],
+    ["socks", 5],
+    ["underwear", 10]
+]);
+let shopping = 0;
+
+//get
+//shopping += store.get("t-shirt");
+//shopping += store.get("socks");
+
+//set
+store.set("hat", 30);
+
+//delete
+//store.delete("socks");
+
+//searching
+console.log(store.has("hat"));
+
+//total element size
+console.log(store.size);
+
+//console.log(shopping);
+
+store.forEach((value, key) => console.log(`${key} $${value}`));
+*/
+
+/*                      Object 
+const car = {
+    model: "Mustang",
+    color: "Red",
+    year:2023,
+
+    drive : function(){
+        console.log("You drive the car!");
+    },
+    brake : function(){
+        console.log("Step down to the brake");
+    }
+}
+const car2 = {
+    model: "Audi",
+    color: "Black",
+    year:2019,
+
+    drive : function(){
+        console.log("You drive the car!");
+    },
+    brake : function(){
+        console.log("Step on the brake");
+    }
+}
+console.log (car2.model);
+console.log (car.color);
+console.log(car2.year);
+
+car2.drive();
+car.brake();
+*/
+
+/*                  This Keyword 
+//outside the class this is the window property//
+const car = {
+    model: "Mustang",
+    color: "Red",
+    year:2023,
+
+    drive : function(){
+        console.log(`Driving the ${this.model} which insists of ${this.color} color & ${this.year} year's model.`);
+    }
+}
+const car2 = {
+    model: "Audi",
+    color: "Black",
+    year:2019,
+
+    drive : function(){
+        console.log(`Driving the ${this.model} which insists of ${this.color} color & ${this.year} year's model.`);
+    }
+}
+car.drive();
+car2.drive();
+*/
+
+/*                        Classes
+class Player{
+    score = 0;
+    pause(){
+        console.log("you paused the game.");
+    }
+    break(){
+        console.log("You are out of the game.");
+    }
+}
+const Player1 = new Player();
+let Player2 = new Player();
+let Player3 = new Player(); 
+
+Player1.score += 1;
+
+console.log(Player1.score);
+console.log(Player1.pause());
+console.log(Player1.break());
+console.log(Player2.score);
+console.log(Player3.break());
+ */
+
+/*                         Constructor 
+class Student{
+
+    constructor(name,age,cgpa){
+        this.name = name;
+        this.age = age;
+        this.cgpa = cgpa;
+    }
+    study(){
+        console.log(`${this.name} is studying.`)
+    }
+}
+const Student1 = new Student('Andry', 23, 3.5);
+const Student2 = new Student("Enrick", 22, 3.75);
+
+console.log(Student1.name);
+console.log(Student1.age);
+console.log(Student1.cgpa);
+Student1.study();
+
+console.log(Student2.name);
+console.log(Student2.age);
+console.log(Student2.cgpa);
+Student2.study();
+*/
+
+/*                          Static Keyword
+class Car{
+    static numberofcars = 0;
+
+    constructor(model){
+        this.model = model;
+        Car.numberofcars += 1;
+    }
+    static race(){
+        console.log("3...2....1...Go!")
+    }
+}
+
+const Car1 = new Car("Mustang");
+const Car2 = new Car("Audi");
+const Car3 = new Car("BMW");
+
+Car.race();
+console.log(Car.numberofcars);
+
+console.log(Car1.numberofcars);
+console.log(Car2.numberofcars);
+console.log(Car3.numberofcars);
+*/
+
+/*                          Inheritance */
+class Animal{
+    alive = true;
+
+    eat(){
+        console.log(`This ${this.name} is eating.`);
+    }
+    sleep(){
+        console.log(`This ${this.name} is sleeping.`);
+    }
+}
+
+class Rabbit extends Animal{
+    name = "Rabbit";
+
+    run(){
+        console.log(`This ${this.name} is running.`)
+    }
+}
+
+class Fish extends Animal{
+    name = "Fish";
+
+    swim(){
+        console.log(`This ${this.name} is swimming.`);
+    }
+}
+
+class Hawk extends Animal{
+    name = "Hawk";
+
+    fly(){
+        console.log(`This ${this.name} is flying.`);
+    }
+}
+
+const Rabbit1 = new Rabbit();
+const Fish1 = new Fish();
+const Hawk1 = new Hawk();
+
+console.log(Hawk1.alive);
+Hawk1.eat();
+Hawk1.sleep();
+Hawk1.fly();
